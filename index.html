@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Library Management System</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@3.4.0/dist/full.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-100">
+
+  <div class="container mx-auto py-10">
+    <h1 class="text-4xl font-bold text-center mb-8">Library Management System</h1>
+
+    <!-- Search Bar -->
+    <div class="flex justify-center mb-6">
+      <input id="searchInput" type="text" placeholder="Search by title or author..." 
+        class="input input-bordered w-full max-w-lg" />
+    </div>
+
+    <!-- Add Book Form -->
+    <div class="flex justify-center mb-6">
+      <button id="addBookButton" class="btn btn-primary">Add New Book</button>
+    </div>
+
+    <!-- Book List -->
+    <div id="booksContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Book cards will be dynamically added here -->
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div id="bookModal" class="modal hidden">
+    <div class="modal-box">
+      <h2 class="text-2xl font-bold mb-4" id="modalTitle">Add Book</h2>
+      <input id="bookTitle" type="text" placeholder="Title" class="input input-bordered w-full mb-4" />
+      <input id="bookAuthor" type="text" placeholder="Author" class="input input-bordered w-full mb-4" />
+      <input id="bookGenre" type="text" placeholder="Genre" class="input input-bordered w-full mb-4" />
+      <label class="flex items-center">
+        <input id="bookAvailable" type="checkbox" class="checkbox" />
+        <span class="ml-2">Available</span>
+      </label>
+      <div class="modal-action">
+        <button id="saveBookButton" class="btn btn-primary">Save</button>
+        <button id="closeModalButton" class="btn">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
